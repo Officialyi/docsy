@@ -2,7 +2,7 @@
 title: Testing Models
 description: Statisticians have a few different ways to determine the significance of an experiment. Here's a breakdown of 2 models utilized.
 # categories: [testing, experimentation]
-weight: 4
+weight: 5
 ---
 
 ## Bayesian Inference:
