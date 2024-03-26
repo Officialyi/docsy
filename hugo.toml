@@ -177,8 +177,12 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 enable = true
 
 [services]
-  [services.googleAnalytics]
-    ID = 'G-XS7YZRBMGJ'
+[services.googleAnalytics]
+# Comment out the 'id' line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
+# There is no need to set another config variable called 'googleAnalytics'
+# Set id to either an old style `UA-xxxxxxxx` tracking code or a newer `G-xxxxxxxxxxx` measurement id 
+# Note tracking codes are deprecated, though can still be generate it under google analytics advanced options
+id = "G-XS7YZRBMGJ"
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
