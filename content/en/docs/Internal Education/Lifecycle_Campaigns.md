@@ -2,6 +2,7 @@
 title: Lifecycle Campaigns
 description: The following is a generalized replication of a previous lifecycle campaign for a software product.
 weight: 3
+resources:
 ---
 
 ### Scenario
@@ -11,6 +12,7 @@ The growth team was entrusted with analyzing opportunities for customer acquisit
 Although Product S is well established in the market, the sales model for S would be transitioning from a Perpetual product to a Subscription based product. Coupled with the maturity of data available for product S, the team decided to start with a foundational assessment of Product S to determine its categories of minimal viability and to inventory what touchpoints were existant for current users. 
 
 #### PLG Readiness Assessment
+
 Starting off with a PLG Readiness Assessment, Product S is analyzed according to a few factors.
 * Define existing product milestones. 
 * User assessment - Define attributes of active users. 
