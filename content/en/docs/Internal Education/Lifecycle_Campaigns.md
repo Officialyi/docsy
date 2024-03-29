@@ -13,6 +13,9 @@ Although Product S is well established in the market, the sales model for S woul
 
 #### PLG Readiness Assessment
 
+<img src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/plg_assessment.png?raw=true">
+
+
 Starting off with a PLG Readiness Assessment, Product S is analyzed according to a few factors.
 * Define existing product milestones. 
 * User assessment - Define attributes of active users. 
@@ -26,6 +29,8 @@ We identified that Product S contains a plethora of disjoined information (an am
 
 #### Establishing a Customer Journey
 The Current Acquisition model: A Trial is in place for users to try the product with no awareness around the quality and quantity of downloads. As this product is well known, the product is also merchandised through an ecommerce instance with paid media leading to a LP that merchandises the product, separate of the .com PDP.
+
+<img src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/milestones.png?raw=true">
 
 From the initial analysis on engagement indicators and product milestones that may lead to a conversion, we set the organic (not including inorganic non-brand keyword campaigns) flow to integrate as follows:
 
@@ -47,6 +52,8 @@ Product Page → Free Trial Download → Installation + Onboarding → In produc
 The area with the highest business impact would start with improving measurement for user assessment. Quantitative demographic information could be collected through implementation of a form prior to downloading the asset. Although its noted that [gating B2B Assets is a common industry practice](https://blog.scoop.it/2014/08/14/b2b-content-marketing-stats/), the PM had a few reservations. The product itself is created as a low barrier into the company's ecosystem of products. Among the known development community, additions of gates may not yield a positive response. Furthermore, the trial download is often tied to direct source APIs. Therefore we decided to test the implementation of the gate while retaining the download link so as to not impact APIs.
 
 **Testing a form**
+
+<img src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/prod_s_trial.png?raw=true">
 
 Our first step in creating a test was to align on the KPIs. Our primary KPI to monitor would be the total downloads of the trial. The intent would be to have a baseline for how many users are downloading the trial and how many users, when faced with a gated Landing Page to download the trial asset would bounce. While setting up the infrastructure for the test, we worked with the analytics team to create a report on engagement with the trial page. We noted that the page itself drew +400K visits/month and after establishing tracking on the download links, a projected ~320K trial downloads. With a 50/50 test projected to run for 2 weeks here's some key notes that determined our future direction. 
 

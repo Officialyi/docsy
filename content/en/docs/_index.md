@@ -9,6 +9,8 @@ weight: 20
 The root page is to help with navigation through the site.
 {{% /pageinfo %}} -->
 
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/dd6d8742f6a04163aaa7f28211698482?sid=f24f56d6-2173-4e06-99b0-88f05fe2f519" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 Welcome aboard! You've just landed on a special corner of the internet - my very own Confluence replica. Here, I've compiled a diverse range of my writings from the academic to the creative, from deep-dive research papers to lively blog posts and persuasive campaigns.
 
 

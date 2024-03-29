@@ -79,3 +79,7 @@ Example Analysis:
 | Experiment Management Platform   | Jira        | Enhancing [tool] as the single source of truth for all things experimentation management related. We will also integrate [tool] and Target for a more seamless experience |       |
 | Accurate Analytics Services and Tooling            | Metrics that the marketing and growth product teams use and trust     | (1) Standardization of metrics that we will evaluate across tests; (2) Data Dictionary that describes and contextualizes the metrics. Adobe Analytics |       |
 | Preventing conflicts across experiments      | Manual assessment  | Experiment tagging and aggregation framework + predefined taxonomy of tagging |       |
+
+## V. Process Flow
+
+<img src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/process_flow.png?raw=true">
