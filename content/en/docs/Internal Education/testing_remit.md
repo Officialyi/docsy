@@ -1,6 +1,6 @@
 ---
 title: Experimentation Team Vision
-description: This remit is an org agnostic remit for how an organization is able to build and nurutre a culture of experimentation.
+description: This remit is an org agnostic remit for how an organization is able to build and nurture a culture of experimentation.
 weight: 4
 ---
 

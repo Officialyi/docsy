@@ -1,5 +1,5 @@
 ---
-title: Decision Making Optimization Resrouces
+title: Decision Making Optimization Resources
 description: Here are a few resources regarding testing tools and the decision making optimization framework.
 # categories: [testing, experimentation]
 weight: 5
