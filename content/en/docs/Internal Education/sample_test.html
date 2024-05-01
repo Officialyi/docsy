@@ -1,9 +1,9 @@
 ---
 title: Experiment Analysis Example
-description: While most experimentation analysis can be done from the platform (i.e. Target/Optimizely), we can export data and conduct in depth analysis through statistical methods as well. This is an example data sheet with a simple test analysis. The script for calculating sample size, statistical significance, and revenue impact were written by me.
-# categories: [testing, experimentation]
-weight: 6
+description: While most experimentation analysis can be done from the platform (i.e. Target/Optimizely), we can export data and conduct in depth analysis through statistical methods as well. This is an example data sheet with a simple test analysis. The script for calculating sample size, statistical significance, confidence intervals, and revenue impact were written by me.
+weight: 5
 ---
+
 
 <!DOCTYPE html>
 
@@ -7521,7 +7521,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7550,7 +7550,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'sample_test_data.csv'</span><span class="p">)</span>
@@ -7584,7 +7584,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#Rename Table Row Values to depict each variant.</span>
@@ -7664,7 +7664,7 @@ n = 2 \left( \frac{{Z_1-{\alpha} + Z_1-{\beta}}}{{ES}} \right)^2 &amp; ES = \fra
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">##Calculation of minimum sample size for the experience based on statistical power and signifiance level and expected lift in CVR</span>
@@ -7819,7 +7819,7 @@ The total estimated sample size for the experience with two variants is: 77225.7
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.stats.power</span> <span class="kn">import</span> <span class="n">zt_ind_solve_power</span>
@@ -7866,7 +7866,7 @@ The total estimated sample size for the experience with two variants is: 97586.6
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">promo_and_ticket</span><span class="p">[</span><span class="s1">'CVR'</span><span class="p">]</span> <span class="o">=</span> <span class="n">promo_and_ticket</span><span class="p">[</span><span class="s1">'Purchase'</span><span class="p">]</span> <span class="o">/</span> <span class="n">promo_and_ticket</span><span class="p">[</span><span class="s1">'Users'</span><span class="p">]</span>
@@ -7913,7 +7913,7 @@ Variation B (Hero Promo)     50000      2990  0.0598  0.243243
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
@@ -7976,8 +7976,33 @@ Variation B (Hero Promo)     50000      2990  0.0598  0.243243  0.000000e+00
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3>Estimating Revenue Impact</h3>
-<p>Since our item price is ~$39.99, let's estimate our average revenue impact. The equation we plan on using is: <br/>Estimated Revenue: ((CVR Control * Monthly Traffic)-(CVR Variant * Monthly Traffic))*AOV</p>
+<h3>Estimating the Confidence Interval</h3>
+<p>As confidence interval measurements for absolute effect and percentage effect can yield different analysis, I'll be using the confidence interval equation noted by Ron Kohavi and team at Microsoft noted in their 2009 paper - Controlled Experiments on the web: survey and practical guide.</p>
+<p>The equation is as follows:</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>\begin{array}{ccc}
+CI_{bounds} = (RelDiff + 1) \cdot \left( \frac{1 \pm Z \cdot \sqrt{{CV_{1}}^2 + {CV_{2}}^2 - Z^2 \cdot {CV_{1}}^2 \cdot {CV_{2}}^2}}{1 - Z \cdot {CV_{1}}^2} \right) - 1
+\end{array}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>For a 95% confidence interval, the Z would be 1.96 with an assumption that the covariance between the treatment and control mean is zero for a true controlled, randomized experience. CV can be calculated as the sample standard devation / sample mean. The RelDiff is the relative difference between the proportions. The 95% confidence interval yields the relative percentage difference for the lift.</p>
 </div>
 </div>
 </div>
@@ -7986,7 +8011,85 @@ Variation B (Hero Promo)     50000      2990  0.0598  0.243243  0.000000e+00
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Total users and Conversion Rate (CVR)</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="mi">50000</span>
+<span class="n">ctrl_cvr</span> <span class="o">=</span> <span class="mf">0.0481</span>
+<span class="c1">#var_a_cvr = 0.0567</span>
+<span class="n">var_b_cvr</span> <span class="o">=</span> <span class="mf">0.0598</span>
+
+<span class="c1">#calculating base stats for CV = std_dev/mean</span>
+<span class="n">mean_ctrl</span> <span class="o">=</span> <span class="n">sample</span> <span class="o">*</span> <span class="n">ctrl_cvr</span>
+<span class="n">mean_var</span> <span class="o">=</span> <span class="n">sample</span> <span class="o">*</span> <span class="n">var_b_cvr</span>
+
+<span class="n">std_dev_ctrl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sample</span> <span class="o">*</span> <span class="n">ctrl_cvr</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ctrl_cvr</span><span class="p">))</span>
+<span class="n">std_dev_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sample</span> <span class="o">*</span> <span class="n">var_b_cvr</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">var_b_cvr</span><span class="p">))</span>
+
+
+<span class="c1"># Calculate Coefficients of Variation (CV)</span>
+<span class="n">CV1</span> <span class="o">=</span> <span class="n">std_dev_ctrl</span> <span class="o">/</span> <span class="n">mean_ctrl</span>
+<span class="n">CV2</span> <span class="o">=</span> <span class="n">std_dev_var</span> <span class="o">/</span> <span class="n">mean_var</span>
+
+<span class="n">RelDiff</span> <span class="o">=</span> <span class="p">(</span><span class="n">mean_var</span> <span class="o">-</span> <span class="n">mean_ctrl</span><span class="p">)</span> <span class="o">/</span> <span class="n">mean_ctrl</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="mf">1.96</span>  <span class="c1"># Z value</span>
+
+<span class="c1"># relative positive bound assuming covariance of treatment and control mean is 0.</span>
+<span class="n">CI_bounds_plus</span> <span class="o">=</span> <span class="p">(</span><span class="n">RelDiff</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">CV1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">CV2</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Z</span> <span class="o">*</span> <span class="n">CV1</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1"># relative negative bound assuming covariance of treatment and control mean is 0.</span>
+<span class="n">CI_bounds_minus</span> <span class="o">=</span> <span class="p">(</span><span class="n">RelDiff</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">CV1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">CV2</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">Z</span> <span class="o">*</span> <span class="n">CV1</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">CI_bounds_minus</span><span class="p">,</span> <span class="n">CI_bounds_plus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0.17921728352953026 0.30919963920425353
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>With this we identify that for variant B, the range of possible conversion rates consistent with the underlying data is between a 17.9-30.9% relative lift from the control.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3>Estimating Revenue Impact</h3>
+<p>Let's consider how this the implementation of a experience with a 24.32% lift and a 15% discount on product value would impact our average renvue impact. As a northern Californian theme park with a pioneering theme, I'll use Great America in Santa Clara as a model. <br/>
+<p>Reported by California's Great America for strategic partnerships site, the park receives around 25M visitors per year. Current ticket prices are ~$39.99. Based on this, let's estimate our average revenue impact through this experience. We can calculate this based on the following formula.<br/></p>
+<p>Estimated Revenue: ((CVR Control * Monthly Traffic)-(CVR Variant * Monthly Traffic))*AOV</p></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">#calculating monthly traffic based on items purchased and control CVR</span>
@@ -8017,7 +8120,7 @@ Variation B (Hero Promo)     50000      2990  0.0598  0.243243  0.000000e+00
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3192715.135135144</pre>
 </div>
