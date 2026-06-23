@@ -1,6 +1,6 @@
 ---
-title: "Teaching the agent to fix itself: remediating the cluster access-list failure"
-linkTitle: "Access-List Remediation (EXP-2025-114)"
+title: "Agent Led Growth Experiment Example"
+linkTitle: "Agent Led Growth Experiment Example"
 weight: 10
 description: >
   An Agentic-Led Growth (ALG) experiment case study. When a coding agent spins up
@@ -72,7 +72,7 @@ The agent has no idea this is a five-minute access-list fix, so it retries, inve
 connection-string changes, or abandons the build. Instrumentation on the agentic surface
 shows this single failure mode sits in front of a large share of stalled activations.
 
-![Pain-point funnel](fig0_pain_funnel.png)
+{{< figure src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/fig0_pain_funnel.png?raw=true" alt="Pain-point funnel" width="660" >}}
 
 ## 1.2 Hypothesis & the ALG bet
 
@@ -225,7 +225,7 @@ of **+11.2pp** (CI +4.8 to +17.6), with **P(V1 beats control) ≈ 100%**. V2 lan
 (+10.0pp). Notably, the two *treatments* are nearly tied here — the probability V1 beats V2 on
 activation rate alone is only **64.3%**. Hold that thought; it matters for the decision.
 
-![Beta-Binomial posteriors of 7-day activation rate](fig1_activation_posterior.png)
+{{< figure src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/fig1_activation_posterior.png?raw=true" alt="Beta-Binomial posteriors of 7-day activation rate" width="620" >}}
 
 ## 2.3 Time to activation · *primary*
 
@@ -234,13 +234,13 @@ On the metric that decides the test, **V1 more than halves the median time to ac
 **P(faster than control) = 100%**. The cumulative-activation curve shows V1 both rising fastest
 *and* reaching the highest ceiling.
 
-![Cumulative activation versus hours since failure](fig2_cumulative_activation.png)
+{{< figure src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/fig2_cumulative_activation.png?raw=true" alt="Cumulative activation versus hours since failure" width="620" >}}
 
 The surprise is the ordering of the two treatments. The CLI auto-fix (V2) lands at 22.6h —
 faster than control, but **100% likely to be slower than simply showing the steps.** The
 posterior of the median makes the separation unambiguous:
 
-![Posterior of median time-to-activation per arm](fig3_tta_posterior.png)
+{{< figure src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/fig3_tta_posterior.png?raw=true" alt="Posterior of median time-to-activation per arm" width="620" >}}
 
 ## 2.4 Secondary: 14-day utilization
 
@@ -248,7 +248,7 @@ The activation win is not hollow. V1's mean 14-day utilization is **96.6 units**
 versus 41.7 for control — **+132%**, P > 99.9%. V2 improves utilization too (+45%) but only about
 a third as much as V1. **Accounts that learn the setup themselves go on to use the platform more.**
 
-![Mean 14-day utilization by arm with credible intervals](fig4_utilization.png)
+{{< figure src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/fig4_utilization.png?raw=true" alt="Mean 14-day utilization by arm with credible intervals" width="620" >}}
 
 ## 2.5 Decision summary
 
@@ -256,7 +256,7 @@ Here is where the Bayesian framing earns its keep. On the **primary metric (TTA)
 best arm with **P(best) = 100%** and an **expected loss of ~0.0 hours** — comfortably inside the
 1-hour ROPE. The decision rule is satisfied: **ship V1.**
 
-![Posterior probability each arm is best on activation](fig5_decision.png)
+{{< figure src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/fig5_decision.png?raw=true" alt="Posterior probability each arm is best on activation" width="620" >}}
 
 | Arm | P(best) · TTA | Expected loss · TTA | P(best) · activation | Expected loss · activation |
 |---|--:|--:|--:|--:|
@@ -279,7 +279,7 @@ Cutting by Demandbase ABM tier, **V1 leads in every tier**, so the recommendatio
 rather than riding one segment. The lift is somewhat larger in Tier 1 / Tier 2 accounts, which
 carry higher intent and more capable agent toolchains.
 
-![Activation rate by arm within each account tier](fig7_segmentation.png)
+{{< figure src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/fig7_segmentation.png?raw=true" alt="Activation rate by arm within each account tier" width="620" >}}
 
 ## 2.7 Why V1 wins — the mechanism
 
@@ -287,7 +287,7 @@ Two guardrail signals explain the result and point to the real learning. V1 acco
 access-list wall **far less often afterward** (0.56 repeat failures per account vs. 1.07 for V2
 and 1.88 for control) and **retain markedly better at 30 days** (54.9% vs. 39.8% vs. 25.8%).
 
-![Repeat failures and 30-day retention by arm](fig6_mechanism.png)
+{{< figure src="https://github.com/Officialyi/docsy/blob/main/content/en/docs/Internal%20Education/fig6_mechanism.png?raw=true" alt="Repeat failures and 30-day retention by arm" width="700" >}}
 
 > **The counter-intuitive bit.** The auto-fix (V2) *should* have been fastest — it does the work
 > for the agent. It wasn't, because the remediation touches **network security settings**, so it
